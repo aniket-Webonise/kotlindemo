@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.webonise.test.kotlindemo.R
+import com.webonise.test.kotlindemo.UserDetailActivity
 
 import com.webonise.test.kotlindemo.adapter.UserListAdapter
 import com.webonise.test.kotlindemo.model.UserListData
@@ -54,7 +55,9 @@ class UserListFragment:Fragment(){
 
 
     private fun partItemClicked(partItem : UserListData) {
-       Toast.makeText(activity,"yes",Toast.LENGTH_LONG).show()
+
+        (activity as UserDetailActivity).loadDetailsFragment(partItem.studentName,partItem.studentAddressa)
     }
+
 
 }
